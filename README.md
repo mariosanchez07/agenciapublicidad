@@ -4,7 +4,6 @@ Aplicación web para gestionar campañas publicitarias y clientes de una agencia
 
 ## 🌐 URL en producción
 https://agenciapublicidad-production.up.railway.app/inicio
-
 ## 🛠️ Tecnologías
 - Java 17
 - Spring Boot 3.2
