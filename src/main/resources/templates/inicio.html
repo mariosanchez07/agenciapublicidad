@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Agencia de Publicidad</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container text-center mt-5">
+    <h1 class="mb-4">Agencia de Publicidad</h1>
+    
+    <img src="/img/foto.jpg" alt="Mi foto" class="rounded-circle mb-4" width="150">
+    
+    <h3>Mario Alberto Sánchez Ballesteros</h3>
+
+    <div class="mt-4 d-flex justify-content-center gap-3">
+        <a th:href="@{/listadoClientes}" class="btn btn-primary">Listado de Clientes</a>
+        <a th:href="@{/listadoCampanas}" class="btn btn-primary">Listado de Campañas</a>
+        <a th:href="@{/altaCliente}" class="btn btn-success">Alta Cliente</a>
+        <a th:href="@{/altaCampana}" class="btn btn-success">Alta Campaña</a>
+    </div>
+</div>
+</body>
+</html>
