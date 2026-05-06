@@ -2,8 +2,11 @@ package com.MASB.agenciapublicidad;
 
 import com.MASB.agenciapublicidad.model.Campana;
 import com.MASB.agenciapublicidad.model.Cliente;
+import com.MASB.agenciapublicidad.model.Empleado;
 import com.MASB.agenciapublicidad.repository.CampanaRepository;
 import com.MASB.agenciapublicidad.repository.ClienteRepository;
+import com.MASB.agenciapublicidad.repository.EmpleadoRepository;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,10 +22,10 @@ public class AgenciapublicidadApplication {
 
     @Bean
     public CommandLineRunner cargarDatos(ClienteRepository clienteRepo, 
-                                          CampanaRepository campanaRepo) {
+                                          CampanaRepository campanaRepo,
+                                          EmpleadoRepository empleadoRepo) {
         return args -> {
 
-            // Solo carga datos si la tabla está vacía
             if (clienteRepo.count() == 0) {
                 clienteRepo.save(new Cliente("Coca-Cola España", "Alimentación", "A12345678", "contacto@cocacola.es"));
                 clienteRepo.save(new Cliente("Zara Group", "Moda", "B87654321", "info@zara.com"));
@@ -47,6 +50,19 @@ public class AgenciapublicidadApplication {
                 campanaRepo.save(new Campana("Summer Vibes", 60000.0, LocalDate.of(2024, 7, 1), "Redes"));
                 campanaRepo.save(new Campana("Rebajas Enero", 35000.0, LocalDate.of(2025, 1, 7), "Prensa"));
                 campanaRepo.save(new Campana("Día de la Madre", 45000.0, LocalDate.of(2025, 5, 1), "Redes"));
+            }
+
+            if (empleadoRepo.count() == 0) {
+                empleadoRepo.save(new Empleado("Ana", "García", "Directora Creativa", "ana@agencia.com"));
+                empleadoRepo.save(new Empleado("Carlos", "Martínez", "Diseñador", "carlos@agencia.com"));
+                empleadoRepo.save(new Empleado("Laura", "Sánchez", "Community Manager", "laura@agencia.com"));
+                empleadoRepo.save(new Empleado("Pedro", "López", "Copywriter", "pedro@agencia.com"));
+                empleadoRepo.save(new Empleado("María", "Fernández", "Account Manager", "maria@agencia.com"));
+                empleadoRepo.save(new Empleado("Juan", "Rodríguez", "SEO Specialist", "juan@agencia.com"));
+                empleadoRepo.save(new Empleado("Sofía", "Pérez", "Fotógrafa", "sofia@agencia.com"));
+                empleadoRepo.save(new Empleado("Diego", "González", "Desarrollador Web", "diego@agencia.com"));
+                empleadoRepo.save(new Empleado("Elena", "Torres", "Directora de Cuentas", "elena@agencia.com"));
+                empleadoRepo.save(new Empleado("Miguel", "Ruiz", "Analista de Datos", "miguel@agencia.com"));
             }
         };
     }

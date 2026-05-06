@@ -2,8 +2,11 @@ package com.MASB.agenciapublicidad.controller;
 
 import com.MASB.agenciapublicidad.model.Campana;
 import com.MASB.agenciapublicidad.model.Cliente;
+import com.MASB.agenciapublicidad.model.Empleado;
 import com.MASB.agenciapublicidad.repository.CampanaRepository;
 import com.MASB.agenciapublicidad.repository.ClienteRepository;
+import com.MASB.agenciapublicidad.repository.EmpleadoRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,5 +67,28 @@ public class AgenciaController {
     public String guardarCampana(@ModelAttribute Campana campana) {
         campanaRepo.save(campana);
         return "redirect:/listadoCampanas";
+    }
+    @Autowired
+    private EmpleadoRepository empleadoRepo;
+
+    // GET /listadoEmpleados
+    @GetMapping("/listadoEmpleados")
+    public String listadoEmpleados(Model model) {
+        model.addAttribute("empleados", empleadoRepo.findAll());
+        return "listadoEmpleados";
+    }
+
+    // GET /altaEmpleado
+    @GetMapping("/altaEmpleado")
+    public String mostrarFormEmpleado(Model model) {
+        model.addAttribute("empleado", new Empleado());
+        return "altaEmpleado";
+    }
+
+    // POST /altaEmpleado
+    @PostMapping("/altaEmpleado")
+    public String guardarEmpleado(@ModelAttribute Empleado empleado) {
+        empleadoRepo.save(empleado);
+        return "redirect:/listadoEmpleados";
     }
 }
