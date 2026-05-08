@@ -33,8 +33,10 @@ https://agenciapublicidad-production.up.railway.app/inicio
 - `GET /inicio` → Página principal
 - `GET /listadoClientes` → Listado de clientes
 - `GET /listadoCampanas` → Listado de campañas
+- `GET /listadoEmpleados` → Listado de Empleados
 - `GET /altaCliente` → Formulario alta de cliente
 - `GET /altaCampana` → Formulario alta de campaña
+- `GET /altaEmpleado` → Formulario alta de Empleado
 
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6bbfc5a8-0918-4b5c-bb5e-77ab9b3d2519" />
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/b26e3335-c97e-4888-ae5e-2337c9f7ec41" />
