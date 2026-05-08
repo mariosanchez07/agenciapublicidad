@@ -35,3 +35,5 @@ https://agenciapublicidad-production.up.railway.app/inicio
 - `GET /listadoCampanas` → Listado de campañas
 - `GET /altaCliente` → Formulario alta de cliente
 - `GET /altaCampana` → Formulario alta de campaña
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/6bbfc5a8-0918-4b5c-bb5e-77ab9b3d2519" />
